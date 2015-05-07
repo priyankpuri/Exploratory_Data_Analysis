@@ -23,4 +23,7 @@ datatbl$Global_active_power=as.numeric(datatbl$Global_active_power)
 ##Converting to kilowatts
 datatbl$Global_active_power=datatbl$Global_active_power/500
 ##Drawing the histogram
-hist(datatbl$Global_active_power,main="Global Active Power",col="red",,xlab="Golbal Active Power (kilowatts)")
+hist(datatbl$Global_active_power,main="Global Active Power",col="red",xlab="Golbal Active Power (kilowatts)")
+## Saving to file
+dev.copy(png, file="plot1.png", height=480, width=480)
+dev.off()

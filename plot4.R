@@ -9,7 +9,7 @@ rm(data)
 ## Converting dates
 datetime <- paste(as.Date(sub_data$Date), sub_data$Time)
 sub_data$Datetime <- as.POSIXct(datetime)
-
+##Start plotting the graphs.Seperate the canvas into 2 rows and 2 columns
 par(mfcol=c(2,2))
 ## Plot 1
 plot(sub_data$Global_active_power~sub_data$Datetime, type="l",ylab="Global Active Power", xlab="")
@@ -17,7 +17,7 @@ plot(sub_data$Global_active_power~sub_data$Datetime, type="l",ylab="Global Activ
 plot(sub_data$Sub_metering_1~sub_data$Datetime, type="l",ylab="Energy sub meeting", xlab="")
 lines(sub_data$Sub_metering_2~sub_data$Datetime, type="l",col="red")
 lines(sub_data$Sub_metering_3~sub_data$Datetime, type="l",col="blue")
-legend(x="center",y=0.7,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty='n',lwd=2,lty=1)
+legend(x="topright",y=0.7,col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty='n',lwd=2,lty=1)
 ## Plot 3
 plot(sub_data$Voltage~sub_data$Datetime, type="l",ylab="Voltage", xlab="datetime")
 ## Plot 4

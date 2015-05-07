@@ -11,6 +11,9 @@ datetime <- paste(as.Date(sub_data$Date), sub_data$Time)
 sub_data$Datetime <- as.POSIXct(datetime)
 
 ## Making the plot
-plot(sub_data$Global_active_power~sub_data$Datetime, type="l",ylab="Global Active Power (kilowatts)", xlab="")
+plot(sub_data$Sub_metering_1~sub_data$Datetime, type="l",ylab="Energy sub meeting", xlab="")
+lines(sub_data$Sub_metering_2~sub_data$Datetime, type="l",col="red")
+lines(sub_data$Sub_metering_3~sub_data$Datetime, type="l",col="blue")
+
 dev.copy(png, file="plot3.png", height=480, width=480)
 dev.off()
